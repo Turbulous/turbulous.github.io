@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: roboto condensed, sans-serif;
+}
+body{
+    background-image: url("../src/img/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container{
+    margin: 0 auto;
+    position: absolute;
+    width:100%;
+    overflow: visible; 
+    padding-left: 0;
+}
+ .svg {
+    width:1080px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    position: relative;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.3;
+    shape-rendering: crispEdges;
+}
+.grid path {
+    stroke-width: 0;
+}
+
+#tag {
+    color: white;
+    background: rgba(229,9,20,0.85);
+    width: 300px;
+    height: auto;
+    position: absolute;
+    display: none;
+    padding:25px;
+    margin-left: -170px;
+    font-size: 12px;
+    border-radius: 3px;
+    -webkit-animation: fadein 0.3s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.3s; /* Firefox < 16 */
+    -ms-animation: fadein 0.3s; /* Internet Explorer */
+    -o-animation: fadein 0.3s; /* Opera < 12.1 */
+    animation: fadein 0.3s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#tag:before {
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  width: 0;
+  border-width: 10px;
+  border-bottom-color: rgba(229,9,20,0.85);
+  top: -20px;
+  overflow: auto;
+
+}
+</style>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://sites.google.com/a/netflix.com/enterprise-applications-projects/">
+        <img alt="Brand" src="../src/img/pn.png" style = "height: 50px; width: auto; margin-top: -20px; padding: 0;" >
+      </a>    
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="DOMINO-timeline.html">DOMINO <span class="sr-only">(current)</span></a></li>
+        <li><a href="VanDAM-timeline.html">VanDAM</a></li>
+        
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Edit Sheets<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/1izfoFDY8VPDwrey0ptvewKAkZiKpFNUHEM8-0kQPHCU/edit#gid=0">Sherlock</a></li>
+            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/1tOnMu7BOilJtmH9UehVgc4M0fW8mlZY6CIyqA5K_zHQ/edit#gid=0">VanDAM</a></li>
+            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/10Bk8WIMOpq6TIRTHGWrQ0h1HXU07x06qOFErk3Ogy-0/edit#gid=0">Domino</a></li>
+            <li class="divider"></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+                <script type="text/javascript" src="../src/tabletop.js"></script>
+                <script type="text/javascript" src="http://mbostock.github.com/d3/d3.min.js"></script>
+                <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    
+                <div id = "container">
+                <div class = "svg"></div>
+                <div id = "tag"></div>
+                </div>
+        </div>
+
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    
+    <script type="text/javascript">
+//Format should be: https://docs.google.com/spreadsheets/d/<KEY>/export?format=csv&id=<KEY>-->
+    var taskArray = [];
+    var ganttData = []; //Initialize Gantt Chart Data Array. Eventually change to TaskArray
+
+    window.onload = function() { init() };
+    var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1izfoFDY8VPDwrey0ptvewKAkZiKpFNUHEM8-0kQPHCU/pubhtml';
+  function init() {
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showData,
+                     simpleSheet: true } )
+    
+  }
+    
+    function showData(data, tabletop) {
+    
+    for(var i = 0; i<data.length; i++){
+        taskArray.push(data[i]);
+    }
+
+    function changePropName(data){
+        //console.log(taskArray);
+        for(var z = 0; z < data.length; z++){
+            
+            if(data[z].hasOwnProperty("endtime")){
+               data[z]["endTime"] = data[z]["endtime"];
+               delete data[z]["endtime"];
+               }
+            if(data[z].hasOwnProperty("starttime")){
+                data[z]["startTime"] = data[z]["starttime"];
+                delete data[z]["starttime"];
+            }
+            else{
+                alert("hasOwnProperty logic fail - hasOwnProperty untouched.");
+            }
+        }
+        return data;
+    }
+        taskArray = changePropName(taskArray);
+        /*
+        return taskArray;
+    }
+    */
+  console.log(taskArray);
+//Setting dimensions for the makeGant function here. Dimension var are outside of function scope so var h can work.
+  var w = 1080;     
+  var barHeight = 20;
+  var gap = barHeight + 5;
+  var topPadding = 75;
+  var sidePadding = 75;
+  var h = topPadding + 75 + (taskArray.length) * (gap);     
+        
+  var svg = d3.selectAll(".svg")
+  //.selectAll("svg")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h)
+  .attr("class", "svg");
+    
+    var dateFormat = d3.time.format("%Y-%m-%d");
+
+    var timeScale = d3.time.scale()
+            .domain([d3.min(taskArray, function(d) {return dateFormat.parse(d.startTime);}),
+                     d3.max(taskArray, function(d) {return dateFormat.parse(d.endTime);})])
+            .range([0,w-150]);
+
+    var categories = new Array();
+
+    for (var i = 0; i < taskArray.length; i++){
+        categories.push(taskArray[i].type);
+    }
+
+    var catsUnfiltered = categories; //for vert labels
+
+    categories = checkUnique(categories);
+
+
+    makeGant(taskArray, w, h);
+
+    var title = svg.append("text")
+                  .text("SHERLOCK TIMELINE")
+                  .attr("x", w/2)
+                  .attr("y", 35)
+                  .attr("text-anchor", "middle")
+                  .attr("font-size", 32)
+                  .attr("fill", "#009FFC");
+        
+
+    function makeGant(tasks, pageWidth, pageHeight){
+
+    var colorScale = d3.scale.linear()
+        .domain([0, categories.length])
+        .range(["#00B9FA", "#F95002"])
+        .interpolate(d3.interpolateHcl);
+
+        console.log("Tasks: " + tasks.length);
+    makeGrid(sidePadding, topPadding, pageWidth, pageHeight);
+    drawRects(tasks, gap, topPadding, sidePadding, barHeight, colorScale, pageWidth, pageHeight);
+    vertLabels(gap, topPadding, sidePadding, barHeight, colorScale);
+        
+    }
+        
+    
+
+
+    function drawRects(theArray, theGap, theTopPad, theSidePad, theBarHeight, theColorScale, w, h){
+
+    var bigRects = svg.append("g")
+        .selectAll("rect")
+       .data(theArray)
+       .enter()
+       .append("rect")
+       .attr("x", 0)
+       .attr("y", function(d, i){
+          return i*theGap + theTopPad - 2;
+      })
+       .attr("width", function(d){
+          return w-theSidePad/2 + 50; // REMOVE 50 EVENTUALLY?
+       })
+       .attr("height", theGap)
+       .attr("stroke", "none")
+       .attr("fill", function(d){
+        for (var i = 0; i < categories.length; i++){
+            if (d.type == categories[i]){
+              return d3.rgb(theColorScale(i));
+            }
+        }
+       })
+       .attr("opacity", 0.4);
+
+
+         var rectangles = svg.append('g')
+         .selectAll("rect")
+         .data(theArray)
+         .enter();
+
+
+       var innerRects = rectangles.append("rect")
+                 .attr("rx", 3)
+                 .attr("ry", 3)
+                 .attr("x", function(d){
+                  return timeScale(dateFormat.parse(d.startTime)) + theSidePad;
+                  })
+                 .attr("y", function(d, i){
+                    return i*theGap + theTopPad;
+                })
+                 .attr("width", function(d){
+                    return (timeScale(dateFormat.parse(d.endTime))-timeScale(dateFormat.parse(d.startTime)));
+                 })
+                 .attr("height", theBarHeight)
+                 .attr("stroke", "none")
+                
+                 .attr("fill", function(d){
+                  for (var i = 0; i < categories.length; i++){
+                      if (d.type == categories[i]){
+                        return d3.rgb(theColorScale(i));
+                      }
+                  }
+                 })
+
+
+             var rectText = rectangles.append("text")
+                   .text(function(d){
+                    return d.task;
+                   })
+                   .attr("x", function(d){
+                    return (timeScale(dateFormat.parse(d.endTime))-timeScale(dateFormat.parse(d.startTime)))/2 + timeScale(dateFormat.parse(d.startTime)) + theSidePad;
+                    })
+                   .attr("y", function(d, i){
+                      return i*theGap + 14+ theTopPad;
+                  })
+                   .attr("font-size", 11)
+                   .attr("text-anchor", "middle")
+                   .attr("text-height", theBarHeight)
+                   .attr("fill", "#fff");
+                   rectText.style("opacity", 0).transition().duration(320).style("opacity", 1);
+
+    rectText.on('mouseover', function(e) {
+     // console.log(this.x.animVal.getItem(this));
+                   var tag = "";
+
+             if (d3.select(this).data()[0].text != ""){
+              tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
+                    "Type: " + d3.select(this).data()[0].type + "<br/>" + 
+                    "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
+                    "Ends: " + d3.select(this).data()[0].endTime + "<br/>" + 
+                    "Details: " + d3.select(this).data()[0].text;
+             } else {
+              tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
+                    "Type: " + d3.select(this).data()[0].type + "<br/>" + 
+                    "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
+                    "Ends: " + d3.select(this).data()[0].endTime;
+             }
+             var output = document.getElementById("tag");
+            
+              var x = this.x.animVal.getItem(this) + "px";
+              var y = this.y.animVal.getItem(this) + 25 + "px";
+
+             output.innerHTML = tag;
+             output.style.top = y;
+             output.style.left = x;
+             output.style.display = "block";
+           
+           }).on('mouseout', function() {
+             var output = document.getElementById("tag");
+             output.style.display = "none";
+
+                 });
+
+
+    innerRects.on('mouseover', function(e) {
+     //console.log(this);
+             var tag = "";
+             if (d3.select(this).data()[0].details != undefined){
+              tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
+                    "Type: " + d3.select(this).data()[0].type + "<br/>" + 
+                    "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
+                    "Ends: " + d3.select(this).data()[0].endTime + "<br/>" + 
+                    "Details: " + d3.select(this).data()[0].details;
+             } else {
+              tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
+                    "Type: " + d3.select(this).data()[0].type + "<br/>" + 
+                    "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
+                    "Ends: " + d3.select(this).data()[0].endTime;
+             }
+             
+             var output = document.getElementById("tag");   
+
+             var x = (this.x.animVal.value + this.width.animVal.value/2) + "px";
+             var y = this.y.animVal.value + 25 + "px";
+
+             output.innerHTML = tag;
+             output.style.top = y;
+             output.style.left = x;
+             
+            
+           }).on('mouseout', function() {
+             var output = document.getElementById("tag");
+             output.style.display = "none";
+             
+
+
+     });
+
+
+
+    }
+
+    function makeGrid(theSidePad, theTopPad, w, h){
+
+    var xAxis = d3.svg.axis()
+        .scale(timeScale)
+        .orient('bottom')
+        .ticks(d3.time.month, 1)
+        .tickSize(-h+theTopPad+20, 0, 0)
+        .tickFormat(d3.time.format('%B'));
+
+    var grid = svg.append('g')
+        .attr('class', 'grid')
+        .attr('transform', 'translate(' +theSidePad + ', ' + (h - 50) + ')')
+        .call(xAxis)
+        .selectAll("text")  
+                .style("text-anchor", "middle")
+                .attr("fill", "#fff")
+                .attr("stroke", "none")
+                .attr("font-size", 14)
+                .attr("dy", "1em");
+    }
+
+    function vertLabels(theGap, theTopPad, theSidePad, theBarHeight, theColorScale){
+      var numOccurances = new Array();
+      var prevGap = 0;
+
+      for (var i = 0; i < categories.length; i++){
+        numOccurances[i] = [categories[i], getCount(categories[i], catsUnfiltered)];
+      }
+
+      var axisText = svg.append("g") //without doing this, impossible to put grid lines behind text
+       .selectAll("text")
+       .data(numOccurances)
+       .enter()
+       .append("text")
+       .text(function(d){
+        return d[0];
+       })
+       .attr("x", 10)
+       .attr("y", function(d, i){
+        if (i > 0){
+            for (var j = 0; j < i; j++){
+              prevGap += numOccurances[i-1][1];
+             // console.log(prevGap);
+              return d[1]*theGap/2 + prevGap*theGap + theTopPad;
+            }
+        } else{
+        return d[1]*theGap/2 + theTopPad;
+        }
+       })
+       .attr("font-size", 15)
+       .attr("text-anchor", "start")
+       .attr("text-height", 13)
+      
+       .attr("fill", function(d){
+        for (var i = 0; i < categories.length; i++){
+            if (d[0] == categories[i]){
+            //  console.log("true!");
+              return d3.rgb(theColorScale(i));//Originally theColorScale(i).darker()
+            }
+        }
+       });
+
+    }
+
+    //from this stackexchange question: http://stackoverflow.com/questions/1890203/unique-for-arrays-in-javascript
+    function checkUnique(arr) {
+        var hash = {}, result = [];
+        for ( var i = 0, l = arr.length; i < l; ++i ) {
+            if ( !hash.hasOwnProperty(arr[i]) ) { //it works with objects! in FF, at least
+                hash[ arr[i] ] = true;
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    //from this stackexchange question: http://stackoverflow.com/questions/14227981/count-how-many-strings-in-an-array-have-duplicates-in-the-same-array
+    function getCounts(arr) {
+        var i = arr.length, // var to loop over
+            obj = {}; // obj to store results
+        while (i) obj[arr[--i]] = (obj[arr[i]] || 0) + 1; // count occurrences
+        return obj;
+    }
+
+    // get specific from everything
+    function getCount(word, arr) {
+        return getCounts(arr)[word] || 0;
+    }
+}
+</script>
+
+</body>
+
+</html>
