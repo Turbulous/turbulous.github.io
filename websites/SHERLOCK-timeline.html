@@ -12,6 +12,7 @@ body{
     background-image: url("../src/img/Background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    filter: blur(5px);
 }
 #container{
     margin: 0 auto;
@@ -19,6 +20,8 @@ body{
     width:100%;
     overflow: visible; 
     padding-left: 0;
+    height: 100%
+    overflow-y: hidden; 
 }
  .svg {
     width:1080px;
@@ -27,7 +30,7 @@ body{
     margin-right: auto;
     overflow: visible;
     position: relative;
-    background-color: rgba(0,0,0,0.6);
+    
     border-radius: 5px;
 }
 
@@ -48,7 +51,7 @@ body{
     position: absolute;
     display: none;
     padding:25px;
-    margin-left: -170px;
+    margin-left: -55px;
     font-size: 12px;
     border-radius: 3px;
     -webkit-animation: fadein 0.3s; /* Safari, Chrome and Opera > 12.1 */
@@ -116,9 +119,6 @@ body{
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="../css/simple-sidebar.css" rel="stylesheet">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -130,7 +130,7 @@ body{
 
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -175,16 +175,14 @@ body{
 </nav>
 
                 <script type="text/javascript" src="../src/tabletop.js"></script>
-                <script type="text/javascript" src="http://mbostock.github.com/d3/d3.min.js"></script>
-                <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+                <script type="text/javascript" src="../src/d3-master/d3.min.js"></script>
+                <script src="../src/d3.v3.js" charset="utf-8"></script>
     
                 <div id = "container">
                 <div class = "svg"></div>
                 <div id = "tag"></div>
                 </div>
         </div>
-
-
     </div>
 
     <!-- jQuery -->
