@@ -260,7 +260,10 @@
                   }
                  })
 
-
+                    innerRects.attr("width", 0).transition().duration(800).attr("width", function(d){
+                    return (timeScale(dateFormat.parse(d.endTime))-timeScale(dateFormat.parse(d.startTime)))
+                 }).ease("elastic");
+        
              var rectText = rectangles.append("text")
                    .text(function(d){
                     return d.task;
