@@ -47,9 +47,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="DOMINO-timeline.html">DOMINO <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="SHERLOCK-timeline.html">SHERLOCK<span class="sr-only">(current)</span></a></li>
         <li><a href="VanDAM-timeline.html">VanDAM</a></li>
-        
+        <li><a href="DOMINO-timeline.html">DOMINO</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -144,10 +144,10 @@
   console.log(taskArray);
 //Setting dimensions for the makeGant function here. Dimension var are outside of function scope so var h can work.
   var w = 1080;     
-  var barHeight = 20;
+  var barHeight = 25;
   var gap = barHeight + 5;
   var topPadding = 75;
-  var sidePadding = 75;
+  var sidePadding = 130;
   var h = topPadding + 75 + (taskArray.length) * (gap);     
         
   var svg = d3.selectAll(".svg")
@@ -178,7 +178,7 @@
     makeGant(taskArray, w, h);
 
     var title = svg.append("text")
-                  .text("SHERLOCK TIMELINE")
+                  .text("DOMINO ATS")
                   .attr("x", w/2)
                   .attr("y", 35)
                   .attr("text-anchor", "middle")
@@ -228,6 +228,7 @@
        })
        .attr("opacity", 0.4);
 
+
          var rectangles = svg.append('g')
          .selectAll("rect")
          .data(theArray)
@@ -243,7 +244,10 @@
                  .attr("y", function(d, i){
                     return i*theGap + theTopPad;
                 })
-                 .attr("height", theBarHeight + 2)
+                 .attr("width", function(d){
+                    return (timeScale(dateFormat.parse(d.endTime))-timeScale(dateFormat.parse(d.startTime)));
+                 })
+                 .attr("height", theBarHeight)
                  .attr("stroke", "none")
                 
                  .attr("fill", function(d){
@@ -253,12 +257,11 @@
                       }
                   }
                  })
-      
-                innerRects.attr("width", 0).transition().duration(800).attr("width", function(d){
+
+                    innerRects.attr("width", 0).transition().duration(800).attr("width", function(d){
                     return (timeScale(dateFormat.parse(d.endTime))-timeScale(dateFormat.parse(d.startTime)))
                  }).ease("elastic");
-
-
+        
              var rectText = rectangles.append("text")
                    .text(function(d){
                     return d.task;
@@ -267,14 +270,14 @@
                     return (timeScale(dateFormat.parse(d.endTime))-timeScale(dateFormat.parse(d.startTime)))/2 + timeScale(dateFormat.parse(d.startTime)) + theSidePad;
                     })
                    .attr("y", function(d, i){
-                      return i*theGap + 14+ theTopPad;
+                      return i*theGap + 17 + theTopPad;
                   })
                    .attr("font-size", 13)
                    .attr("text-anchor", "middle")
                    .attr("text-height", theBarHeight)
                    .attr("fill", "#fff");
-                rectText.style("opacity", 0).transition().duration(1700).style("opacity", 1);
-        
+                   rectText.style("opacity", 0).transition().duration(320).style("opacity", 1);
+
     rectText.on('mouseover', function(e) {
      // console.log(this.x.animVal.getItem(this));
                    var tag = "";
@@ -395,7 +398,7 @@
         return d[1]*theGap/2 + theTopPad;
         }
        })
-       .attr("font-size", 15)
+       .attr("font-size", 18)
        .attr("text-anchor", "start")
        .attr("text-height", 13)
       
