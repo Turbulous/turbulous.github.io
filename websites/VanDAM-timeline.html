@@ -146,10 +146,10 @@
   console.log(taskArray);
 //Setting dimensions for the makeGant function here. Dimension var are outside of function scope so var h can work.
   var w = 1080;     
-  var barHeight = 20;
+  var barHeight = 25;
   var gap = barHeight + 5;
   var topPadding = 75;
-  var sidePadding = 75;
+  var sidePadding = 130;
   var h = topPadding + 75 + (taskArray.length) * (gap);     
         
   var svg = d3.selectAll(".svg")
@@ -272,7 +272,7 @@
                     return (timeScale(dateFormat.parse(d.endTime))-timeScale(dateFormat.parse(d.startTime)))/2 + timeScale(dateFormat.parse(d.startTime)) + theSidePad;
                     })
                    .attr("y", function(d, i){
-                      return i*theGap + 14+ theTopPad;
+                      return i*theGap + 17 + theTopPad;
                   })
                    .attr("font-size", 13)
                    .attr("text-anchor", "middle")
@@ -400,7 +400,7 @@
         return d[1]*theGap/2 + theTopPad;
         }
        })
-       .attr("font-size", 15)
+       .attr("font-size", 18)
        .attr("text-anchor", "start")
        .attr("text-height", 13)
       
