@@ -24,8 +24,6 @@ margin-left: auto;
 margin-right: auto;
 overflow: visible;
 position: relative;
-border-radius: 5px;
-z-index: 1;
 }
 .grid .tick {
 stroke: lightgrey;
