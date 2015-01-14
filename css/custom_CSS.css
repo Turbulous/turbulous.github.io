@@ -8,6 +8,34 @@ background-image: url("../src/img/Background.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 }
+.navbar{
+	margin-bottom:0;
+	border-radius: 0;
+	border-top: 0;
+}
+
+.navbar.navbar-inverse.navbar-bottom{
+	border-top: 0;
+	opacity: 0.9;
+}
+
+.navbar .divider-vertical {
+height: 50px;
+margin: 0 9px;
+border-right: 1px solid #ffffff;
+border-left: 1px solid #f2f2f2;
+}
+
+.navbar-inverse .divider-vertical {
+border-right-color: #222222;
+border-left-color: #111111;
+}
+
+@media (max-width: 767px) {
+.navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
+}
 #container{
 margin: 0 auto;
 position: absolute;
@@ -15,15 +43,17 @@ width:100%;
 overflow: visible;
 padding-left: 0;
 height: 100%
-overflow-y: hidden;
+overflow-y: visible;
 }
 .svg {
 width:1080px;
+margin-top: 10px;
 height: auto;
 margin-left: auto;
 margin-right: auto;
 overflow: visible;
 position: relative;
+padding-bottom: 50px;
 }
 .grid .tick {
 stroke: lightgrey;

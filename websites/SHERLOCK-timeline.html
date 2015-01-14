@@ -28,7 +28,7 @@
 </head>
 
 <body>
-
+<!--Navbars Come In!-->
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,6 +47,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Edit Sheets<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/1izfoFDY8VPDwrey0ptvewKAkZiKpFNUHEM8-0kQPHCU/edit#gid=0">Sherlock</a></li>
+            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/1tOnMu7BOilJtmH9UehVgc4M0fW8mlZY6CIyqA5K_zHQ/edit#gid=0">VanDAM</a></li>
+            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/10Bk8WIMOpq6TIRTHGWrQ0h1HXU07x06qOFErk3Ogy-0/edit#gid=0">Domino</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Timelines<span class="caret"></span></a>
@@ -58,22 +68,39 @@
         </li>
       </ul>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Edit Sheets<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/1izfoFDY8VPDwrey0ptvewKAkZiKpFNUHEM8-0kQPHCU/edit#gid=0">Sherlock</a></li>
-            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/1tOnMu7BOilJtmH9UehVgc4M0fW8mlZY6CIyqA5K_zHQ/edit#gid=0">VanDAM</a></li>
-            <li><a href="https://docs.google.com/a/netflix.com/spreadsheets/d/10Bk8WIMOpq6TIRTHGWrQ0h1HXU07x06qOFErk3Ogy-0/edit#gid=0">Domino</a></li>
-            <li class="divider"></li>
-            <li><a href="#">About</a></li>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<nav class="navbar navbar-inverse navbar-bottom navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bottom">
+      <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-bottom">
+            <li><a href="SHERLOCK-timeline.html">&larr; &nbsp; SHERLOCK</a></li>
+            <li class="divider-vertical"></li>
           </ul>
-        </li>
+        </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="divider-vertical"></li>
+          <li><a href="VanDAM-timeline.html">VanDAM &nbsp; &rarr;</a></li>
+        </ul>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<!-- Navbars End Here! -->
                 <script type="text/javascript" src="../src/tabletop.js"></script>
                 <script type="text/javascript" src="../src/d3-master/d3.min.js"></script>
                 <script src="../src/d3.v3.js" charset="utf-8"></script>
@@ -81,17 +108,7 @@
                 <div id = "container">
                 <div class = "svg"></div>
                 <div id = "tag"></div>
-                  <div class="btn-group btn-group-justified" role="group" aria-label="..." style="width: 1080px; margin-left: auto; margin-right: auto;">
-                    <div class="btn-group" role="group">
-                      <button type="button" class="btn btn-default">VanDAM</button>
-                    </div>
-                    <div class="btn-group" role="group">
-                      <button type="button" class="btn btn-inverse">&nbsp;</button>
-                    </div>
-                    <div class="btn-group" role="group">
-                      <button type="button" class="btn btn-default">Domino</button>
-                    </div>
-                  </div>
+                  
                 </div>
                 
                 
